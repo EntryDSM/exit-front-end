@@ -9,7 +9,8 @@
     "lint": "next lint",
     "lint:fix": "next lint:fix",
     "test": "jest",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "commit": "cz"
   },
   "dependencies": {
     "@emotion/react": "^11.10.5",
@@ -28,6 +29,7 @@
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
+    "commitizen": "^4.2.5",
     "husky": ">=6",
     "lint-staged": ">=10",
     "prettier": "^2.7.1"
@@ -37,5 +39,15 @@
       "prettier --write",
       "eslint --fix"
     ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "prepare-commit-msg": "exec < /dev/tty && npx cz --hook || true"
+    }
   }
 }
