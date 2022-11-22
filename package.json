@@ -10,6 +10,7 @@
     "lint:fix": "next lint:fix",
     "test": "jest",
     "prepare": "husky install",
+    "analyze-bundle": "ANALYZE=true yarn build",
     "commit": "cz"
   },
   "dependencies": {
