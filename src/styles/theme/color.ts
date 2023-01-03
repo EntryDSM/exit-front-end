@@ -1,4 +1,4 @@
-export const color = {
+export const Colors = {
   gray900: '#000000',
   gray800: '#141414',
   gray700: '#1B1B1B',
@@ -10,8 +10,8 @@ export const color = {
   gray100: '#F6F6F6',
   gray50: '#FFFFFF',
   check: '#04DF00',
-  error: '#E84045',
-  focus: '#006EFF',
+  error: '#006EFF',
+  focus: '#E84045',
 } as const;
 
-export type colorKeyOfType = keyof typeof color;
+export type colorKeyOfType = keyof typeof Colors;
