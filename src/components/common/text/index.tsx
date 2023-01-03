@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { ReactNode } from 'react';
 import { colorKeyOfType } from '../../../styles/theme/color';
-import { fontKeyOfType } from '../../../styles/theme/font';
+import { fontKeyOfType } from '../../../styles/theme/fonts';
 import { marginCssType, marginToCss } from '../../../utils/margin';
 
 type TDisplay = 'inline' | 'inline-block' | 'block';

@@ -1,7 +1,7 @@
-import { color } from './color';
-import { font } from './font';
+import { Colors } from './color';
+import { fonts } from './fonts';
 
 export const theme = {
-  color,
-  font,
+  Colors: Colors,
+  Fonts: fonts,
 } as const;

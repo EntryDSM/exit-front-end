@@ -11,23 +11,28 @@ export const global = css`
     list-style: none;
     font-style: normal;
   }
+
   button,
   label {
     cursor: pointer;
     background-color: transparent;
   }
+
   blockquote,
   q {
     quotes: none;
   }
+
   table {
     border-collapse: collapse;
     border-spacing: 0;
   }
+
   a {
     text-decoration: none;
     color: inherit;
   }
+
   input[type='number']::-webkit-outer-spin-button,
   input[type='number']::-webkit-inner-spin-button {
     -webkit-appearance: none;
