@@ -18,7 +18,7 @@ const mgReturn = (mg: marginType) => {
     return `margin: 0 auto;`;
   }
 
-  const unitTransform = (m: 'auto' | number) => (m === 'auto' ? m : m + 'px');
+  const unitTransform = (m?: 'auto' | number) => (m === 'auto' ? m : m + 'px');
 
   switch (mg[0]) {
     case 'top':
