@@ -16,12 +16,13 @@ export enum EnumInputStatus {
 interface PropsType extends marginCssType {
   className?: string;
   name: string;
-  color: colorKeyOfType;
+  color?: colorKeyOfType;
   width?: number;
   height?: number;
   statusTypes: EnumInputStatus;
   placeHolder?: string;
   isHiddenIcon?: boolean;
+  as?: 'input' | 'textarea';
 }
 
 const getBorderColorWithStatus = (status: EnumInputStatus) => {
@@ -41,7 +42,7 @@ export const Input = ({ ...props }: PropsType) => {
     formState: { errors },
   } = useForm();
   const [status, setStatus] = useState(props.statusTypes);
-  const [isHiddenText, setIsHiddenText] = useState();
+  const [isHiddenText, setIsHiddenText] = useState(false);
 
   enum EnumInputAction {
     FOCUS = 'FOCUS',
@@ -73,6 +74,7 @@ export const Input = ({ ...props }: PropsType) => {
           placeholder={props.placeHolder}
           onFocus={() => dispatchAction(EnumInputAction.FOCUS)}
           onBlur={() => dispatchAction(EnumInputAction.ENABLE)}
+          as={props.as ?? 'input'}
         />
         {props.isHiddenIcon && (
           <_icon
@@ -102,6 +104,10 @@ const _inputComponent = styled.div<PropsType>`
   position: relative;
   max-width: ${({ width = 400 }) => width}px;
   height: ${({ height = 46 }) => height}px;
+
+  & > textarea {
+    padding-top: 16px;
+  }
 `;
 const _input = styled.input<PropsType>`
   width: ${({ width = 400 }) => width}px;
