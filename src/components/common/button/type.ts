@@ -1,5 +1,6 @@
 import { colorKeyOfType } from '../../../styles/theme/color';
-import { ReactNode } from 'react';
+import { Dispatch, ReactNode, SetStateAction } from 'react';
+import { IconResponse } from '../../../assets/icon/@type';
 
 export enum ButtonKinds {
   CONTAINED = 'CONTAINED',
@@ -18,17 +19,17 @@ export enum ButtonStatus {
   ICON_ONLY = 'ICON_ONLY',
 }
 
-export interface IPropsType {
+export interface PropsType {
   className?: string;
   btnKinds: ButtonKinds;
   width?: number;
   height?: number;
-  icon?: SVGElement;
+  icon?: (props: IconResponse) => JSX.Element;
   initStatus?: ButtonStatus;
   children: ReactNode;
 }
 
-export interface IButtonProps extends IPropsType {
+export interface ButtonProps extends PropsType {
   buttonStatus: IButtonStatus;
   currentStatus: ButtonStatus;
 }
@@ -49,10 +50,18 @@ export interface ButtonStatusValues {
   bgColor?: colorKeyOfType;
   fontColor?: colorKeyOfType;
   isUnderline?: boolean;
+  fillColor?: colorKeyOfType;
 }
 
 export interface BorderProps {
   border?: number;
   borderColor?: colorKeyOfType;
   radius?: number;
+}
+
+export interface DispatchActionResponse {
+  action: ButtonStatus;
+  mutationButtonPropsSetter: Dispatch<SetStateAction<ButtonProps>>;
+
+  [key: string]: any;
 }

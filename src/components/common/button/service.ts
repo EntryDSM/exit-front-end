@@ -1,9 +1,9 @@
 import {
   ButtonKinds,
   ButtonStatus,
-  IButtonProps,
+  DispatchActionResponse,
   IButtonStatus,
-  IPropsType,
+  PropsType,
 } from './type';
 import {
   containedConfig,
@@ -12,36 +12,25 @@ import {
   textConfig,
   underlineConfig,
 } from './model';
-import { Dispatch, SetStateAction } from 'react';
+import { Colors } from '../../../styles/theme/color';
 
 export const onAction = ({
   action,
+  mutationButtonPropsSetter,
   ...props
-}: {
-  action: ButtonStatus;
-  [key: string]: any;
-}) => {
-  const setButtonProps = props.setButtonProps as Dispatch<
-    SetStateAction<IButtonProps>
-  >;
-  setButtonProps((current) => {
+}: DispatchActionResponse) => {
+  mutationButtonPropsSetter((current) => {
     return {
       ...current,
       currentStatus: action,
     };
   });
 };
-export const dispatchAction = ({
-  action,
-  ...props
-}: {
-  action: ButtonStatus;
-  [key: string]: any;
-}) => onAction({ action: action, ...props });
-
-export const getButtonPropsByKinds = (
+export const dispatchAction = ({ action, ...props }: DispatchActionResponse) =>
+  onAction({ action: action, ...props });
+export const getButtonPropsByButtonKinds = (
   type: ButtonKinds,
-  { ...props }: IPropsType
+  { ...props }: PropsType
 ): IButtonStatus => {
   switch (type) {
     case ButtonKinds.UNDERLINE:
@@ -54,5 +43,38 @@ export const getButtonPropsByKinds = (
       return containedConfig;
     case ButtonKinds.OUTLINED:
       return outlinedConfig;
+  }
+};
+
+interface IMutateStyle {
+  // TODO 타입 정하
+}
+
+// TODO 미완성
+export const getButtonStatusPropsByCurrentStatus = ({
+  buttonStatus,
+  currentStatus,
+  mutateStyle,
+}: {
+  buttonStatus: IButtonStatus;
+  currentStatus: ButtonStatus;
+  mutateStyle: keyof IMutateStyle;
+}) => {
+  switch (mutateStyle) {
+    case 'bgColor':
+    case 'fontColor':
+    case 'fillColor':
+      const _color =
+        buttonStatus[currentStatus][mutateStyle] ??
+        buttonStatus.default![mutateStyle];
+      console.log(Colors[_color!]);
+      return Colors[_color!];
+    // case "border":
+    //     return buttonStatus[currentStatus][mutateStyle] ?? buttonStatus.default![mutateStyle];
+    case 'isUnderline':
+      const _isUnderLine =
+        buttonStatus[currentStatus]['isUnderline'] ??
+        buttonStatus.default!.isUnderline;
+      return _isUnderLine ? 'underline' : null;
   }
 };
