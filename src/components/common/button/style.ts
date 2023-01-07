@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { ButtonProps } from './type';
+import { ButtonProps } from './@type';
 import { Colors } from '../../../styles/theme/color';
 
 // TODO 스타일 코드 리펙

@@ -1,4 +1,4 @@
-import { ButtonStatus, IButtonStatus } from './type';
+import { ButtonStatus, IButtonStatus } from './@type';
 
 export const containedConfig: IButtonStatus = {
   [ButtonStatus.ENABLED]: {

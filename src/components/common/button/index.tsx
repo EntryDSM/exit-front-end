@@ -1,7 +1,8 @@
-import { ButtonProps, ButtonStatus, IButtonStatus, PropsType } from './type';
-import { dispatchAction, getButtonPropsByButtonKinds } from './service';
+import { ButtonProps, ButtonStatus, IButtonStatus, PropsType } from './@type';
+import { getButtonPropsByButtonKinds } from './service';
 import { useState } from 'react';
 import { _button } from './style';
+import { dispatchAction } from './action';
 
 export const Button = ({ ...props }: PropsType) => {
   const buttonStatusProps: IButtonStatus = getButtonPropsByButtonKinds(
