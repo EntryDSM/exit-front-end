@@ -1,4 +1,10 @@
-import { ButtonKinds, ButtonStatus, IButtonStatus, PropsType } from './@type';
+import {
+  ButtonKinds,
+  ButtonStatus,
+  IButtonStatus,
+  IMutateStyle,
+  PropsType,
+} from './@type';
 import {
   containedConfig,
   outlinedConfig,
@@ -11,7 +17,7 @@ import { Colors } from '../../../styles/theme/color';
 export const getButtonPropsByButtonKinds = (
   type: ButtonKinds,
   { ...props }: PropsType
-): IButtonStatus => {
+): IButtonStatus<ButtonStatus> => {
   switch (type) {
     case ButtonKinds.UNDERLINE:
       return underlineConfig;
@@ -25,18 +31,13 @@ export const getButtonPropsByButtonKinds = (
       return outlinedConfig;
   }
 };
-
-interface IMutateStyle {
-  // TODO 타입 정하
-}
-
-// TODO 미완성
-export const getButtonStatusPropsByCurrentStatus = ({
+// TODO Refactor : 후에 처리하는 스타일의 공통된 집합에 따라 통합하여 리팩하기
+export const getButtonStatusStylePropsByMutateStyle = ({
   buttonStatus,
   currentStatus,
   mutateStyle,
 }: {
-  buttonStatus: IButtonStatus;
+  buttonStatus: IButtonStatus<ButtonStatus>;
   currentStatus: ButtonStatus;
   mutateStyle: keyof IMutateStyle;
 }) => {
@@ -47,10 +48,22 @@ export const getButtonStatusPropsByCurrentStatus = ({
       const _color =
         buttonStatus[currentStatus][mutateStyle] ??
         buttonStatus.default![mutateStyle];
-      console.log(Colors[_color!]);
       return Colors[_color!];
-    // case "border":
-    //     return buttonStatus[currentStatus][mutateStyle] ?? buttonStatus.default![mutateStyle];
+    case 'borderColor':
+      const _borderColor =
+        buttonStatus[currentStatus].border?.borderColor ??
+        buttonStatus.default!.border?.borderColor;
+      return Colors[_borderColor!];
+    case 'radius':
+      const radius =
+        buttonStatus[currentStatus].border?.radius ??
+        buttonStatus.default!.border?.radius;
+      return radius + 'px';
+    case 'border':
+      const border =
+        buttonStatus[currentStatus].border?.border ??
+        buttonStatus.default!.border?.border;
+      return border + 'px solid';
     case 'isUnderline':
       const _isUnderLine =
         buttonStatus[currentStatus]['isUnderline'] ??

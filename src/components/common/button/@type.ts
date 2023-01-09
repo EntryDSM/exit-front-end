@@ -30,20 +30,15 @@ export interface PropsType {
 }
 
 export interface ButtonProps extends PropsType {
-  buttonStatus: IButtonStatus;
+  buttonStatus: IButtonStatus<ButtonStatus>;
   currentStatus: ButtonStatus;
 }
 
-export interface IButtonStatus {
-  // TODO 이 부분 클린코드하는 법 질문하기
-  [ButtonStatus.ENABLED]: ButtonStatusValues;
-  [ButtonStatus.HOVER]: ButtonStatusValues;
-  [ButtonStatus.DISABLED]: ButtonStatusValues;
-  [ButtonStatus.PRESSED]: ButtonStatusValues;
-  [ButtonStatus.WITH_ICON]: ButtonStatusValues;
-  [ButtonStatus.ICON_ONLY]: ButtonStatusValues;
+export type IButtonStatus<T extends ButtonStatus> = {
+  [key in T]: ButtonStatusValues;
+} & {
   default?: ButtonStatusValues;
-}
+};
 
 export interface ButtonStatusValues {
   border?: BorderProps;
@@ -65,3 +60,13 @@ export interface DispatchActionResponse {
 
   [key: string]: any;
 }
+
+export type IMutateStyle = {
+  bgColor?: colorKeyOfType;
+  fontColor?: colorKeyOfType;
+  fillColor?: colorKeyOfType;
+  borderColor?: colorKeyOfType;
+  border?: number;
+  radius?: number;
+  isUnderline?: boolean;
+};
