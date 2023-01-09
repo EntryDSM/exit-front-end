@@ -1,6 +1,6 @@
 import { ButtonStatus, IButtonStatus } from './@type';
 
-export const containedConfig: IButtonStatus = {
+export const containedConfig: IButtonStatus<ButtonStatus> = {
   [ButtonStatus.ENABLED]: {
     bgColor: 'gray800',
   },
@@ -28,7 +28,7 @@ export const containedConfig: IButtonStatus = {
   },
 };
 
-export const outlinedConfig: IButtonStatus = {
+export const outlinedConfig: IButtonStatus<ButtonStatus> = {
   [ButtonStatus.ENABLED]: {
     bgColor: 'gray50',
     fontColor: 'gray800',
@@ -72,7 +72,7 @@ export const outlinedConfig: IButtonStatus = {
   },
 };
 
-export const roundedConfig: IButtonStatus = {
+export const roundedConfig: IButtonStatus<ButtonStatus> = {
   [ButtonStatus.ENABLED]: {
     bgColor: 'gray800',
   },
@@ -100,7 +100,7 @@ export const roundedConfig: IButtonStatus = {
   },
 };
 
-export const underlineConfig: IButtonStatus = {
+export const underlineConfig: IButtonStatus<ButtonStatus> = {
   [ButtonStatus.ENABLED]: {},
   [ButtonStatus.HOVER]: {
     fontColor: 'gray500',
@@ -118,7 +118,7 @@ export const underlineConfig: IButtonStatus = {
   },
 };
 
-export const textConfig: IButtonStatus = {
+export const textConfig: IButtonStatus<ButtonStatus> = {
   [ButtonStatus.ENABLED]: {},
   [ButtonStatus.HOVER]: {
     bgColor: 'gray100',

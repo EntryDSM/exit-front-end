@@ -26,7 +26,7 @@ export interface PropsType {
   height?: number;
   icon?: (props: IconResponse) => JSX.Element;
   initStatus?: ButtonStatus;
-  children: ReactNode;
+  children?: ReactNode;
 }
 
 export interface ButtonProps extends PropsType {

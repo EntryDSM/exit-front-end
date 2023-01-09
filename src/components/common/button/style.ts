@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { ButtonProps } from './@type';
-import { getButtonStatusStylePropsByMutateStyle } from './service';
+import { getButtonStyleByMutateStyle } from './service';
 
 export const _button = styled.button<ButtonProps>`
   display: flex;
@@ -9,31 +9,31 @@ export const _button = styled.button<ButtonProps>`
   width: ${({ width = 88 }) => width}px;
   height: ${({ height = 46 }) => height}px;
   text-decoration: ${({ buttonStatus, currentStatus }) =>
-    getButtonStatusStylePropsByMutateStyle({
+    getButtonStyleByMutateStyle({
       buttonStatus,
       currentStatus,
       mutateStyle: 'isUnderline',
     })};
   color: ${({ buttonStatus, currentStatus }) =>
-    getButtonStatusStylePropsByMutateStyle({
+    getButtonStyleByMutateStyle({
       buttonStatus,
       currentStatus,
       mutateStyle: 'fontColor',
     })};
   background-color: ${({ buttonStatus, currentStatus }) =>
-    getButtonStatusStylePropsByMutateStyle({
+    getButtonStyleByMutateStyle({
       buttonStatus,
       currentStatus,
       mutateStyle: 'bgColor',
     })};
   border: ${({ buttonStatus, currentStatus }) =>
-    getButtonStatusStylePropsByMutateStyle({
+    getButtonStyleByMutateStyle({
       buttonStatus,
       currentStatus,
       mutateStyle: 'border',
     })};
   border-color: ${({ buttonStatus, currentStatus }) =>
-    getButtonStatusStylePropsByMutateStyle({
+    getButtonStyleByMutateStyle({
       buttonStatus,
       currentStatus,
       mutateStyle: 'borderColor',
@@ -44,7 +44,7 @@ export const _button = styled.button<ButtonProps>`
 
 ;
 border-radius: ${({ buttonStatus, currentStatus }) =>
-  getButtonStatusStylePropsByMutateStyle({
+  getButtonStyleByMutateStyle({
     buttonStatus,
     currentStatus,
     mutateStyle: 'radius',

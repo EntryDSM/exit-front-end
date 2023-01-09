@@ -32,7 +32,7 @@ export const getButtonPropsByButtonKinds = (
   }
 };
 // TODO Refactor : 후에 처리하는 스타일의 공통된 집합에 따라 통합하여 리팩하기
-export const getButtonStatusStylePropsByMutateStyle = ({
+export const getButtonStyleByMutateStyle = ({
   buttonStatus,
   currentStatus,
   mutateStyle,

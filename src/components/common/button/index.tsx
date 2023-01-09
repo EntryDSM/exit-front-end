@@ -1,14 +1,15 @@
 import { ButtonProps, ButtonStatus, IButtonStatus, PropsType } from './@type';
-import { getButtonPropsByButtonKinds } from './service';
+import {
+  getButtonPropsByButtonKinds,
+  getButtonStyleByMutateStyle,
+} from './service';
 import { useState } from 'react';
 import { _button } from './style';
 import { dispatchAction } from './action';
 
 export const Button = ({ ...props }: PropsType) => {
-  const buttonStatusProps: IButtonStatus = getButtonPropsByButtonKinds(
-    props.btnKinds,
-    { ...props }
-  );
+  const buttonStatusProps: IButtonStatus<ButtonStatus> =
+    getButtonPropsByButtonKinds(props.btnKinds, { ...props });
   const [buttonProps, setButtonProps] = useState<ButtonProps>({
     ...props,
     buttonStatus: buttonStatusProps,
@@ -44,7 +45,17 @@ export const Button = ({ ...props }: PropsType) => {
         })
       }
     >
-      {Icon ? Icon({ width: 10, height: 10, fillColor: 'gray50' }) : null}
+      {Icon
+        ? Icon({
+            width: 10,
+            height: 10,
+            fillColor: getButtonStyleByMutateStyle({
+              currentStatus: buttonProps.currentStatus,
+              buttonStatus: buttonProps.buttonStatus,
+              mutateStyle: 'fillColor',
+            })!,
+          })
+        : null}
       {buttonProps.children}
     </_button>
   );
