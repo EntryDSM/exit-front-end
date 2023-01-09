@@ -25,8 +25,8 @@ export const Text = ({ ...props }: PropsType) => (
 
 const _Text = styled.div<PropsType>`
   display: ${({ display }) => display};
-  color: ${({ color, theme }) => theme.color[color!]};
-  ${({ size, theme }) => theme.font[size!]};
+  color: ${({ color, theme }) => theme.Colors[color!]};
+  ${({ size, theme }) => theme.Fonts[size!]};
   ${({ margin }) => marginToCss({ margin })};
   cursor: ${({ cursor }) => cursor};
   text-align: ${({ align }) => align};

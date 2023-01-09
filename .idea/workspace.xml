@@ -5,22 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4051a047-87f8-4569-8077-14d52cad58f0" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/.gitkeep" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/common/checkbox/@type.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/common/checkbox/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/common/checkbox/model.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/common/checkbox/service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/common/checkbox/style.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/common/input/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/input/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/input/service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/input/service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/input/style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/input/style.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/common/text/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/text/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/global.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/global.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/theme/color.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/theme/color.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/theme/font.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/theme/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/theme/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+      </list>
+    </option>
   </component>
   <component name="FormatOnSaveOptions">
     <option name="myRunOnSave" value="true" />
@@ -30,6 +37,9 @@
   </component>
   <component name="OptimizeOnSaveOptions">
     <option name="myRunOnSave" value="true" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2Jm3o4aRw8evnCEu3PaGviN6aVI" />
   <component name="ProjectLevelVcsManager">
@@ -45,6 +55,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "code.cleanup.on.save": "true",
+    "last_opened_file_path": "/Users/jangjisoung/Desktop/2023/project/exit-front-end",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
@@ -54,11 +65,16 @@
     "nodejs_package_manager_path": "yarn",
     "prettierjs.PrettierConfiguration.Package": "/Users/jangjisoung/Desktop/exit-front-end/node_modules/prettier",
     "rearrange.code.on.save": "true",
-    "settings.editor.selected.configurable": "settings.javascript.prettier",
-    "ts.external.directory.path": "/Users/jangjisoung/Desktop/exit-front-end/node_modules/typescript/lib",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "/Users/jangjisoung/Desktop/2023/project/exit-front-end/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/assets/icon" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="dev" type="js.build_tools.npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
@@ -82,6 +98,11 @@
       <workItem from="1672669606923" duration="493000" />
       <workItem from="1672697727626" duration="7094000" />
       <workItem from="1672707074071" duration="13357000" />
+      <workItem from="1672787334203" duration="2535000" />
+      <workItem from="1672799200103" duration="213000" />
+      <workItem from="1672799425277" duration="22234000" />
+      <workItem from="1672961996536" duration="7144000" />
+      <workItem from="1672986583793" duration="28855000" />
     </task>
     <servers />
   </component>
