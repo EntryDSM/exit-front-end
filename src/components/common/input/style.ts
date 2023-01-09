@@ -1,6 +1,6 @@
 import styled from '@emotion/styled/dist/emotion-styled.cjs';
 import { Weight } from '../../../styles/theme/weight';
-import { PropsType } from './type';
+import { PropsType } from './@type';
 import { Colors } from '../../../styles/theme/color';
 import { getBorderColorWithStatus } from './service';
 

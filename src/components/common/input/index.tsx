@@ -2,9 +2,9 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import Preview from '../../../assets/icon/preview.svg';
 import NonePreview from '../../../assets/icon/non-preview.svg';
-import { EnumInputAction, PropsType } from './type';
+import { EnumInputAction, PropsType } from './@type';
 import * as _ from './style';
-import { dispatchAction } from './service';
+import { dispatchAction } from './action';
 
 export const Input = ({ ...props }: PropsType) => {
   const {
