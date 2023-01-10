@@ -5,13 +5,15 @@ import { CheckboxProps } from './@type';
 export const _checkbox = styled.input<CheckboxProps>`
   opacity: 0;
   position: absolute;
+  width: ${({ width = 24 }) => width}px;
+  height: ${({ height = 24 }) => height}px;
 
   & + label {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 20px;
-    height: 20px;
+    width: ${({ width = 24 }) => width}px;
+    height: ${({ height = 24 }) => height}px;
     border: ${({ checkboxStatus, currentStatus }) =>
       getCheckboxStyleByStatus({
         checkboxStatus,

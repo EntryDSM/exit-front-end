@@ -20,6 +20,8 @@ export interface PropsType {
   className?: string;
   child?: ReactNode;
   initStatus?: CheckboxStatus;
+  width?: number;
+  height?: number;
 }
 
 export type ICheckBoxStatus<T extends CheckboxStatus> = {

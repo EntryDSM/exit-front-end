@@ -16,10 +16,10 @@ function _checkIcon({
 }) {
   return (
     <svg
-      width="14"
-      height="10"
+      width={width ?? '14'}
+      height={height ?? '10'}
       viewBox="0 0 14 10"
-      fill="none"
+      fill={fill ?? 'none'}
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -80,6 +80,8 @@ function Checkbox({ ...props }: PropsType) {
       />
       <label htmlFor="input">
         <_checkIcon
+          width={Number(checkBoxProps.width) / 1.5}
+          height={Number(checkBoxProps.height) / 0.3}
           fill={getCheckboxStyleByStatus({
             checkboxStatus: checkBoxProps.checkboxStatus,
             currentStatus: checkBoxProps.currentStatus,
