@@ -1,38 +1,35 @@
 import styled from '@emotion/styled';
 import { getCheckboxStyleByStatus } from './service';
-import { CheckboxProps } from './@type';
+import { RadioProps } from './@type';
 
-export const _checkbox = styled.input<CheckboxProps>`
+export const _radio = styled.input<RadioProps>`
   opacity: 0;
   position: absolute;
+  width: ${({ width = 24 }) => width}px;
+  height: ${({ height = 24 }) => height}px;
 
   & + label {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 20px;
-    height: 20px;
-    border: ${({ checkboxStatus, currentStatus }) =>
+    border-radius: 90px;
+    width: ${({ width = 24 }) => width}px;
+    height: ${({ height = 24 }) => height}px;
+    border: ${({ radioStatus, currentStatus }) =>
       getCheckboxStyleByStatus({
-        checkboxStatus,
+        radioStatus,
         currentStatus,
         mutateStyle: 'border',
       })};
-    border-color: ${({ checkboxStatus, currentStatus }) =>
+    border-color: ${({ radioStatus, currentStatus }) =>
       getCheckboxStyleByStatus({
-        checkboxStatus,
+        radioStatus,
         currentStatus,
         mutateStyle: 'borderColor',
       })};
-    border-radius: ${({ checkboxStatus, currentStatus }) =>
+    background-color: ${({ radioStatus, currentStatus }) =>
       getCheckboxStyleByStatus({
-        checkboxStatus,
-        currentStatus,
-        mutateStyle: 'radius',
-      })};
-    background-color: ${({ checkboxStatus, currentStatus }) =>
-      getCheckboxStyleByStatus({
-        checkboxStatus,
+        radioStatus,
         currentStatus,
         mutateStyle: 'bgColor',
       })};

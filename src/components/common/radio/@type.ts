@@ -1,7 +1,7 @@
 import { colorKeyOfType } from '../../../styles/theme/color';
 import { Dispatch, ReactNode, SetStateAction } from 'react';
 
-export enum CheckboxStatus {
+export enum RadioStatus {
   ENABLED_SELECTED = 'ENABLED_SELECTED',
   ENABLED_UNSELECTED = 'ENABLED_UNSELECTED',
   DISABLED_UNSELECTED = 'DISABLED_UNSELECTED',
@@ -10,8 +10,8 @@ export enum CheckboxStatus {
 }
 
 export interface DispatchActionResponse {
-  action: CheckboxStatus;
-  mutateCheckboxPropsSetter: Dispatch<SetStateAction<CheckboxProps>>;
+  action: RadioStatus;
+  mutateCheckboxPropsSetter: Dispatch<SetStateAction<RadioProps>>;
 
   [key: string]: any;
 }
@@ -19,16 +19,18 @@ export interface DispatchActionResponse {
 export interface PropsType {
   className?: string;
   child?: ReactNode;
-  initStatus?: CheckboxStatus;
+  initStatus?: RadioStatus;
+  width?: number;
+  height?: number;
 }
 
-export type ICheckBoxStatus<T extends CheckboxStatus> = {
-  [key in T]: CheckboxStatusValues;
+export type IRadioStatus<T extends RadioStatus> = {
+  [key in T]: RadioStatusValues;
 } & {
-  default: CheckboxStatusValues;
+  default: RadioStatusValues;
 };
 
-interface CheckboxStatusValues {
+interface RadioStatusValues {
   border?: BorderProps;
   bgColor?: colorKeyOfType;
   fillColor?: colorKeyOfType;
@@ -36,13 +38,12 @@ interface CheckboxStatusValues {
 
 interface BorderProps {
   border?: number;
-  radius?: number;
   borderColor?: colorKeyOfType;
 }
 
-export interface CheckboxProps extends PropsType {
-  checkboxStatus: ICheckBoxStatus<CheckboxStatus>;
-  currentStatus: CheckboxStatus;
+export interface RadioProps extends PropsType {
+  radioStatus: IRadioStatus<RadioStatus>;
+  currentStatus: RadioStatus;
 }
 
 export interface IMutateStyle {

@@ -1,94 +1,66 @@
-import { _checkbox } from './style';
-import { CheckboxProps, CheckboxStatus, PropsType } from './@type';
+import { _radio } from './style';
+import { PropsType, RadioProps, RadioStatus } from './@type';
 import { useState } from 'react';
 import { dispatchAction } from './action';
-import { checkBoxConfig } from './model';
-import { getCheckboxStyleByStatus } from './service';
+import { radioConfig } from './model';
 
-function _checkIcon({
-  width,
-  height,
-  fill,
-}: {
-  width?: number;
-  height?: number;
-  fill?: string;
-}) {
-  return (
-    <svg
-      width="14"
-      height="10"
-      viewBox="0 0 14 10"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M1 4.2L5.14222 9L13 1"
-        stroke="white"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
-function Checkbox({ ...props }: PropsType) {
-  const [checkBoxProps, setCheckBoxProps] = useState<CheckboxProps>({
+function Radio({ ...props }: PropsType) {
+  const [radioProps, setRadioProps] = useState<RadioProps>({
     ...props,
-    checkboxStatus: checkBoxConfig,
-    currentStatus: props.initStatus ?? CheckboxStatus.ENABLED_UNSELECTED,
+    radioStatus: radioConfig,
+    currentStatus: props.initStatus ?? RadioStatus.ENABLED_UNSELECTED,
   });
   const [toggleSelect, setToggleSelect] = useState(true);
   return (
     <>
-      <_checkbox
-        type="checkbox"
-        id="input"
+      <_radio
+        type="radio"
+        id="radio"
         onMouseOver={() => {
-          if (checkBoxProps.currentStatus === CheckboxStatus.ENABLED_SELECTED)
-            return;
+          if (radioProps.currentStatus === RadioStatus.ENABLED_SELECTED) return;
           dispatchAction({
-            action: CheckboxStatus.HOVER,
-            mutateCheckboxPropsSetter: setCheckBoxProps,
+            action: RadioStatus.HOVER,
+            mutateCheckboxPropsSetter: setRadioProps,
           });
         }}
         onMouseLeave={() => {
-          if (checkBoxProps.currentStatus === CheckboxStatus.ENABLED_SELECTED)
-            return;
+          if (radioProps.currentStatus === RadioStatus.ENABLED_SELECTED) return;
           dispatchAction({
-            action: CheckboxStatus.ENABLED_UNSELECTED,
-            mutateCheckboxPropsSetter: setCheckBoxProps,
+            action: RadioStatus.ENABLED_UNSELECTED,
+            mutateCheckboxPropsSetter: setRadioProps,
           });
         }}
         onClick={() => {
           // TODO Refactor
           dispatchAction({
             action: toggleSelect
-              ? CheckboxStatus.ENABLED_SELECTED
-              : CheckboxStatus.ENABLED_UNSELECTED,
-            mutateCheckboxPropsSetter: setCheckBoxProps,
+              ? RadioStatus.ENABLED_SELECTED
+              : RadioStatus.ENABLED_UNSELECTED,
+            mutateCheckboxPropsSetter: setRadioProps,
           });
           setToggleSelect((current) => !current);
         }}
-        {...checkBoxProps}
+        {...radioProps}
         // TODO : Refactor
         disabled={
           props.initStatus === 'DISABLED_SELECTED' ||
           props.initStatus === 'DISABLED_UNSELECTED'
         }
       />
-      <label htmlFor="input">
-        <_checkIcon
-          fill={getCheckboxStyleByStatus({
-            checkboxStatus: checkBoxProps.checkboxStatus,
-            currentStatus: checkBoxProps.currentStatus,
-            mutateStyle: 'fillColor',
-          })}
-        />
+      <label htmlFor="radio">
+        {radioProps.currentStatus === RadioStatus.ENABLED_SELECTED ? (
+          <div
+            style={{
+              width: Number(radioProps.width) / 1.3 + 'px',
+              height: Number(radioProps.height) / 1.3 + 'px',
+              backgroundColor: 'black',
+              borderRadius: '90px',
+            }}
+          />
+        ) : null}
       </label>
     </>
   );
 }
 
-export default Checkbox;
+export default Radio;

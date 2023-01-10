@@ -1,36 +1,31 @@
-import { CheckboxStatus, ICheckBoxStatus, IMutateStyle } from './@type';
+import { IMutateStyle, IRadioStatus, RadioStatus } from './@type';
 import { Colors } from '../../../styles/theme/color';
 
 export const getCheckboxStyleByStatus = ({
-  checkboxStatus,
+  radioStatus,
   currentStatus,
   mutateStyle,
 }: {
-  checkboxStatus: ICheckBoxStatus<CheckboxStatus>;
-  currentStatus: CheckboxStatus;
+  radioStatus: IRadioStatus<RadioStatus>;
+  currentStatus: RadioStatus;
   mutateStyle: keyof IMutateStyle;
 }) => {
   switch (mutateStyle) {
     case 'bgColor':
     case 'fillColor':
       const _color =
-        checkboxStatus[currentStatus][mutateStyle] ??
-        checkboxStatus.default![mutateStyle];
+        radioStatus[currentStatus][mutateStyle] ??
+        radioStatus.default![mutateStyle];
       return Colors[_color!];
     case 'borderColor':
       const _borderColor =
-        checkboxStatus[currentStatus].border?.borderColor ??
-        checkboxStatus.default!.border?.borderColor;
+        radioStatus[currentStatus].border?.borderColor ??
+        radioStatus.default!.border?.borderColor;
       return Colors[_borderColor!];
     case 'border':
       const border =
-        checkboxStatus[currentStatus].border?.border ??
-        checkboxStatus.default!.border?.border;
+        radioStatus[currentStatus].border?.border ??
+        radioStatus.default!.border?.border;
       return border + 'px solid';
-    case 'radius':
-      const radius =
-        checkboxStatus[currentStatus].border?.radius ??
-        checkboxStatus.default!.border?.radius;
-      return radius + 'px';
   }
 };

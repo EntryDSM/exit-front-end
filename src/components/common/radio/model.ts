@@ -1,7 +1,7 @@
-import { CheckboxStatus, ICheckBoxStatus } from './@type';
+import { IRadioStatus, RadioStatus } from './@type';
 
-export const checkBoxConfig: ICheckBoxStatus<CheckboxStatus> = {
-  [CheckboxStatus.HOVER]: {
+export const radioConfig: IRadioStatus<RadioStatus> = {
+  [RadioStatus.HOVER]: {
     bgColor: 'gray100',
     fillColor: 'gray100',
     border: {
@@ -9,7 +9,7 @@ export const checkBoxConfig: ICheckBoxStatus<CheckboxStatus> = {
       borderColor: 'gray400',
     },
   },
-  [CheckboxStatus.ENABLED_UNSELECTED]: {
+  [RadioStatus.ENABLED_UNSELECTED]: {
     bgColor: 'gray50',
     fillColor: 'gray50',
     border: {
@@ -17,15 +17,19 @@ export const checkBoxConfig: ICheckBoxStatus<CheckboxStatus> = {
       borderColor: 'gray400',
     },
   },
-  [CheckboxStatus.ENABLED_SELECTED]: {
-    bgColor: 'gray800',
+  [RadioStatus.ENABLED_SELECTED]: {
+    bgColor: 'gray50',
     fillColor: 'gray50',
+    border: {
+      border: 2,
+      borderColor: 'gray800',
+    },
   },
-  [CheckboxStatus.DISABLED_SELECTED]: {
-    bgColor: 'gray300',
-    fillColor: 'gray50',
+  [RadioStatus.DISABLED_SELECTED]: {
+    bgColor: 'gray50',
+    fillColor: 'gray300',
   },
-  [CheckboxStatus.DISABLED_UNSELECTED]: {
+  [RadioStatus.DISABLED_UNSELECTED]: {
     bgColor: 'gray100',
     fillColor: 'gray100',
     border: {
