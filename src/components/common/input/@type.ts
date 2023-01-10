@@ -21,6 +21,6 @@ export interface PropsType extends marginCssType {
   height?: number;
   statusTypes: EnumInputStatus;
   placeHolder?: string;
-  isHiddenIcon?: boolean;
+  hasHiddenIcon?: boolean;
   as?: 'input' | 'textarea';
 }

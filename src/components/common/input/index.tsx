@@ -32,7 +32,7 @@ export const Input = ({ ...props }: PropsType) => {
           }
           as={props.as ?? 'input'}
         />
-        {props.isHiddenIcon && (
+        {props.hasHiddenIcon && (
           <_.icon
             {...props}
             onClick={() => setIsHiddenText((current) => !current)}
