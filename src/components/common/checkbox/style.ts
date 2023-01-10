@@ -1,27 +1,44 @@
 import styled from '@emotion/styled';
-import { Colors } from '../../../styles/theme/color';
+import { getCheckboxStyleByStatus } from './service';
+import { CheckboxProps } from './@type';
 
-export const _input = styled.input`
-  display: none;
+export const _checkbox = styled.input<CheckboxProps>`
+  opacity: 0;
+  position: absolute;
 
   & + label {
     display: flex;
     justify-content: center;
+    align-items: center;
     width: 20px;
     height: 20px;
-    border: 2px solid ${Colors.gray400};
-    border-radius: 1px;
+    border: ${({ checkboxStatus, currentStatus }) =>
+      getCheckboxStyleByStatus({
+        checkboxStatus,
+        currentStatus,
+        mutateStyle: 'border',
+      })};
+    border-color: ${({ checkboxStatus, currentStatus }) =>
+      getCheckboxStyleByStatus({
+        checkboxStatus,
+        currentStatus,
+        mutateStyle: 'borderColor',
+      })};
+    border-radius: ${({ checkboxStatus, currentStatus }) =>
+      getCheckboxStyleByStatus({
+        checkboxStatus,
+        currentStatus,
+        mutateStyle: 'radius',
+      })};
+    background-color: ${({ checkboxStatus, currentStatus }) =>
+      getCheckboxStyleByStatus({
+        checkboxStatus,
+        currentStatus,
+        mutateStyle: 'bgColor',
+      })};
     font-weight: bold;
-  }
 
-  &:checked + label::after {
-    content: '✔';
-    color: white;
-    border-color: black;
-    font-size: 12px;
-  }
-
-  &:hover + label {
-    background-color: ${Colors.gray100};
+    &:checked + label {
+    }
   }
 `;
