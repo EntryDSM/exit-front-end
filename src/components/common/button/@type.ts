@@ -56,7 +56,7 @@ export interface BorderProps {
 
 export interface DispatchActionResponse {
   action: ButtonStatus;
-  mutationButtonPropsSetter: Dispatch<SetStateAction<ButtonProps>>;
+  mutateButtonPropsSetter: Dispatch<SetStateAction<ButtonProps>>;
 
   [key: string]: any;
 }

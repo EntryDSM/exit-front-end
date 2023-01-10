@@ -23,25 +23,25 @@ export const Button = ({ ...props }: PropsType) => {
       onMouseOver={() =>
         dispatchAction({
           action: ButtonStatus.HOVER,
-          mutationButtonPropsSetter: setButtonProps,
+          mutateButtonPropsSetter: setButtonProps,
         })
       }
       onMouseLeave={() =>
         dispatchAction({
           action: ButtonStatus.ENABLED,
-          mutationButtonPropsSetter: setButtonProps,
+          mutateButtonPropsSetter: setButtonProps,
         })
       }
       onMouseDown={() =>
         dispatchAction({
           action: ButtonStatus.PRESSED,
-          mutationButtonPropsSetter: setButtonProps,
+          mutateButtonPropsSetter: setButtonProps,
         })
       }
       onMouseUp={() =>
         dispatchAction({
           action: ButtonStatus.HOVER,
-          mutationButtonPropsSetter: setButtonProps,
+          mutateButtonPropsSetter: setButtonProps,
         })
       }
     >

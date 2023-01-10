@@ -2,10 +2,10 @@ import { DispatchActionResponse } from './@type';
 
 export const onAction = ({
   action,
-  mutationButtonPropsSetter,
+  mutateButtonPropsSetter,
   ...props
 }: DispatchActionResponse) => {
-  mutationButtonPropsSetter((current) => {
+  mutateButtonPropsSetter((current) => {
     return {
       ...current,
       currentStatus: action,
