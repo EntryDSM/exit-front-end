@@ -51,8 +51,8 @@ function Radio({ ...props }: PropsType) {
         {radioProps.currentStatus === RadioStatus.ENABLED_SELECTED ? (
           <div
             style={{
-              width: Number(radioProps.width) / 1.3 + 'px',
-              height: Number(radioProps.height) / 1.3 + 'px',
+              width: 16,
+              height: 16,
               backgroundColor: 'black',
               borderRadius: '90px',
             }}
