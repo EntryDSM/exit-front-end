@@ -17,7 +17,7 @@ interface PropsType extends marginCssType {
   onClick?: any;
   cursor?: 'pointer';
   align?: TAlign;
-  fontSize?: string;
+  fontSize?: number;
   weight?: number;
 }
 
