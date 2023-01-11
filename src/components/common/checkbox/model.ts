@@ -33,5 +33,9 @@ export const checkBoxConfig: ICheckBoxStatus<CheckboxStatus> = {
       borderColor: 'gray200',
     },
   },
-  default: {},
+  default: {
+    border: {
+      radius: 2,
+    },
+  },
 };
