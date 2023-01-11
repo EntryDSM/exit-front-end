@@ -10,8 +10,9 @@ export const Colors = {
   gray100: '#F6F6F6',
   gray50: '#FFFFFF',
   check: '#04DF00',
-  error: '#006EFF',
-  focus: '#E84045',
+  error: '#E84045',
+  focus: '#006EFF',
+  point: '#4ACB67',
 } as const;
 
 export type colorKeyOfType = keyof typeof Colors;
