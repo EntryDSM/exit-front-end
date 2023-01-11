@@ -1,49 +1,51 @@
-import styled from '@emotion/styled/dist/emotion-styled.cjs';
+import styled from '@emotion/styled';
 import { Weight } from '../../../styles/theme/weight';
 import { PropsType } from './@type';
 import { Colors } from '../../../styles/theme/color';
-import { getBorderColorWithStatus } from './service';
 
-export const inputSection = styled.div`
+export const _InputSection = styled.div`
   display: flex;
   flex-direction: column;
 `;
-export const title = styled.h1`
-  font-weight: ${Weight.regular}px;
+export const _Title = styled.h1`
+  font-weight: ${Weight.medium};
   font-size: 14px;
   padding-left: 7px;
   margin-bottom: 7px;
 `;
-export const inputComponent = styled.div<PropsType>`
+export const _InputComponent = styled.div<PropsType>`
+  display: flex;
   position: relative;
   max-width: ${({ width = 400 }) => width}px;
   height: ${({ height = 46 }) => height}px;
-
-  & > textarea {
-    padding-top: 16px;
-  }
 `;
-export const input = styled.input<PropsType>`
+export const _Input = styled.input<PropsType>`
   width: ${({ width = 400 }) => width}px;
   height: ${({ height = 46 }) => height}px;
   padding-left: 20px;
-  border: 2px solid
-    ${({ statusTypes }) => getBorderColorWithStatus(statusTypes)};
+  border: 2px solid ${({ error }) => (error ? Colors.error : 'black')};
   border-radius: 4px;
-  color: ${Colors.gray300};
+  resize: none;
+
+  &::placeholder {
+    color: ${Colors.gray300};
+  }
+
+  &:focus {
+    border: 2px solid ${Colors.focus};
+  }
 `;
-export const errorMessage = styled.span`
+export const _Icon = styled.button`
+  position: absolute;
+  right: 2px;
+  top: 11px;
+  background-color: white;
+  padding-right: 20px;
+  padding-left: 19px;
+`;
+export const _ErrorMessage = styled.span`
   color: ${Colors.error};
   font-weight: ${Weight.regular};
   font-size: 14px;
   line-height: 22px;
-`;
-export const icon = styled.button<PropsType>`
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  top: 12px;
-  right: 2px;
-  background-color: white;
-  width: 64px;
 `;

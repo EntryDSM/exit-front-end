@@ -1,13 +1,13 @@
 import { marginCssType } from '../../../utils/margin';
 import { colorKeyOfType } from '../../../styles/theme/color';
 
-export enum EnumInputStatus {
+export enum InputStatus {
   ENABLE = 'ENABLE',
   FOCUS = 'FOCUS',
   ERROR = 'ERROR',
 }
 
-export enum EnumInputAction {
+export enum InputAction {
   FOCUS = 'FOCUS',
   ENABLE = 'ENABLE',
   ERROR = 'ERROR',
@@ -19,8 +19,8 @@ export interface PropsType extends marginCssType {
   color?: colorKeyOfType;
   width?: number;
   height?: number;
-  statusTypes: EnumInputStatus;
   placeHolder?: string;
   hasHiddenIcon?: boolean;
   as?: 'input' | 'textarea';
+  error?: string;
 }
