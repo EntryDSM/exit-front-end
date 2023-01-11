@@ -32,6 +32,12 @@ export const _button = styled.button<ButtonProps>`
       currentStatus,
       mutateStyle: 'border',
     })};
+  border-radius: ${({ buttonStatus, currentStatus }) =>
+    getButtonStyleByMutateStyle({
+      buttonStatus,
+      currentStatus,
+      mutateStyle: 'radius',
+    })};
   border-color: ${({ buttonStatus, currentStatus }) =>
     getButtonStyleByMutateStyle({
       buttonStatus,
