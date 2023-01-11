@@ -20,7 +20,7 @@ interface ILayout extends marginCssType {
   height?: string;
 }
 
-export const Index = styled.div<ILayout>`
+export const Layout = styled.div<ILayout>`
   display: flex;
   position: ${({ position }) => position};
   flex-direction: ${({ direction = 'column' }) => direction};
