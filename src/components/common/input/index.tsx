@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { PropsType } from './@type';
 import Preview from '../../../assets/icon/preview';
@@ -19,18 +19,19 @@ export const Input = ({ ...props }: PropsType) => {
     setError,
   } = useForm();
   const [hasHiddenIcon, setHasHiddenIcon] = useState(props.hasHiddenIcon);
-  const [toggleIcon, setToggleIcon] = useState(true);
+  const [toggleIcon, setToggleIcon] = useState(props.initInputType === 'text');
+  useEffect(() => {
+    setError('테스트', {
+      type: 'required',
+      message: '꼭 입력해야 합니다.',
+    });
+  }, []);
   return (
     <_InputSection>
       <_Title>{props.name}</_Title>
       <_InputComponent {...props} width={props.width} height={props.height}>
         <_Input
-          {...register(props.name, {
-            required: {
-              value: true,
-              message: '꼭 입력해야 합니다.',
-            },
-          })}
+          {...register(props.name, props?.validate)}
           width={props.width}
           height={props.height}
           type={toggleIcon ? 'password' : 'text'}

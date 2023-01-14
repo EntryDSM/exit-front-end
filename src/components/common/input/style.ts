@@ -44,6 +44,7 @@ export const _Icon = styled.button`
   padding-left: 19px;
 `;
 export const _ErrorMessage = styled.span`
+  position: relative;
   color: ${Colors.error};
   font-weight: ${Weight.regular};
   font-size: 14px;
