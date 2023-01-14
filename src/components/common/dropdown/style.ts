@@ -1,12 +1,13 @@
 import styled from '@emotion/styled';
 import { Colors } from '../../../styles/theme/color';
+import { PropsTypes } from './@types';
 
-export const _dropdownSection = styled.div`
+export const _dropdownSection = styled.div<PropsTypes>`
   display: flex;
   flex-direction: column;
-  width: 240px;
+  width: ${({ width = 240 }) => width}px;
 `;
-export const _dropdownWrapper = styled.div`
+export const _dropdownWrapper = styled.div<PropsTypes>`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -14,16 +15,17 @@ export const _dropdownWrapper = styled.div`
   padding-right: 16px;
   border: 2px solid ${Colors.gray800};
   border-radius: 2px;
-  height: 46px;
+  height: ${({ height = 46 }) => height}px;
 `;
-export const _selectSection = styled.div`
+export const _selectSection = styled.div<PropsTypes>`
+  position: absolute;
   overflow-y: scroll;
   max-height: 138px;
-  margin-top: 10px;
+  margin-top: ${({ height = 46 }) => height}px;
   border-radius: 2px;
 
   div {
-    height: 45px;
+    height: ${({ height = 46 }) => height}px;
     position: relative;
   }
 
@@ -33,9 +35,10 @@ export const _selectSection = styled.div`
     right: 0;
   }
 `;
-export const _selectWrapper = styled.div`
+export const _selectWrapper = styled.div<PropsTypes>`
   display: flex;
   border-radius: 2px;
+  width: ${({ width = 240 }) => width}px;
   position: relative;
   flex-direction: column;
   justify-content: center;

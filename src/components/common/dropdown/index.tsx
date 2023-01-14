@@ -26,13 +26,13 @@ function Line() {
 
 // TODO Refactor
 function Dropdown({ ...props }: PropsTypes) {
-  const [toggleArrow, setToggleArrow] = useState(true);
+  const [toggleArrow, setToggleArrow] = useState(false);
   const [currentStatus, setCurrentStatus] = useState<string | undefined>(
-    undefined
+    props.title
   );
   return (
-    <_dropdownSection>
-      <_dropdownWrapper>
+    <_dropdownSection {...props}>
+      <_dropdownWrapper {...props}>
         <p>{currentStatus ?? 'select'}</p>
         <button onClick={() => setToggleArrow((current) => !current)}>
           {toggleArrow ? (
@@ -43,17 +43,18 @@ function Dropdown({ ...props }: PropsTypes) {
         </button>
       </_dropdownWrapper>
       {toggleArrow ? (
-        <_selectSection>
+        <_selectSection {...props}>
           {props.selectModels.map((model) => (
             <div key={Date.now()}>
               <_selectWrapper
+                {...props}
                 onClick={() => {
                   // TODO refactor
                   setCurrentStatus(model.name);
                   setToggleArrow(false);
                 }}
               >
-                <p>Thins {model.name}</p>
+                <p>{model.name}</p>
               </_selectWrapper>
               <Line />
             </div>
