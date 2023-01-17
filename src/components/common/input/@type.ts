@@ -21,7 +21,7 @@ export interface PropsType extends marginCssType {
   height?: number;
   placeHolder?: string;
   hasHiddenIcon?: boolean;
-  initInputType?: 'text' | 'password';
+  initInputType?: 'text' | 'password' | 'email';
   as?: 'input' | 'textarea';
   error?: string;
 }

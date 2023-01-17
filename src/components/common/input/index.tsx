@@ -14,7 +14,7 @@ import {
 export const Input = ({ ...props }: PropsType) => {
   const [hasHiddenIcon, setHasHiddenIcon] = useState(props.hasHiddenIcon);
   const [toggleIcon, setToggleIcon] = useState(
-    props.initInputType === 'text' || hasHiddenIcon
+    props.initInputType ? 'text' : hasHiddenIcon
   );
   return (
     <_InputSection>
