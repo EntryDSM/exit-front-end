@@ -10,6 +10,7 @@ import { Colors } from '../../../styles/theme/color';
 import { useState } from 'react';
 import UpArrow from '../../../assets/icon/up-arrow';
 import { PropsTypes } from './@types';
+import { Text } from '@components/common/text';
 
 function Line() {
   return (
@@ -29,13 +30,18 @@ function Line() {
 function Dropdown({ ...props }: PropsTypes) {
   const [toggleArrow, setToggleArrow] = useState(false);
   const [currentStatus, setCurrentStatus] = useState<string | undefined>(
-    props.name
+    props.placeholder
   );
   return (
     <_dropdownSection {...props}>
-      {props.title ? <_Title {...props}>{props.title}</_Title> : null}
+      {props.name ? <_Title {...props}>{props.name}</_Title> : null}
       <_dropdownWrapper {...props}>
-        <p>{currentStatus ?? 'select'}</p>
+        <Text
+          color={currentStatus === props?.placeholder ? 'gray300' : 'gray800'}
+          fontSize={14}
+        >
+          {currentStatus ?? 'select'}
+        </Text>
         <button onClick={() => setToggleArrow((current) => !current)}>
           {toggleArrow ? (
             <DownArrow width={24} height={24} fillColor={Colors.gray800} />

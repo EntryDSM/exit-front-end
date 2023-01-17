@@ -1,8 +1,8 @@
-import { colorKeyOfType } from '../../../styles/theme/color';
+import { colorKeyOfType } from '@styles/theme/color';
 
 export interface PropsTypes {
-  title?: string;
   name?: string;
+  placeholder?: string;
   width?: number;
   height?: number;
   bgColor?: colorKeyOfType;

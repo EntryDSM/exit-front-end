@@ -18,8 +18,8 @@ export const _dropdownWrapper = styled.div<PropsTypes>`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-left: 20px;
+  padding-right: 20px;
   border: 2px solid ${Colors.gray800};
   border-radius: 2px;
   height: ${({ height = 46 }) => height}px;
