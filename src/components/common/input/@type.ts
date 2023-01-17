@@ -1,6 +1,5 @@
 import { marginCssType } from '../../../utils/margin';
 import { colorKeyOfType } from '../../../styles/theme/color';
-import { RegisterOptions } from 'react-hook-form';
 
 export enum InputStatus {
   ENABLE = 'ENABLE',
@@ -25,5 +24,4 @@ export interface PropsType extends marginCssType {
   initInputType?: 'text' | 'password';
   as?: 'input' | 'textarea';
   error?: string;
-  validate?: RegisterOptions;
 }

@@ -6,6 +6,7 @@ import { Colors } from '../../../styles/theme/color';
 export const _InputSection = styled.div`
   display: flex;
   flex-direction: column;
+  position: relative;
 `;
 export const _Title = styled.h1`
   font-weight: ${Weight.medium};
