@@ -6,6 +6,7 @@ interface ILayout extends marginCssType {
   minHeight?: number;
   minWidth?: number;
   xPadding?: number;
+  yPadding?: number;
   bgColor?: colorKeyOfType;
   justify?: 'center' | 'flex-start' | 'flex-end' | 'space-between';
   align?: 'center' | 'flex-start' | 'flex-end' | 'space-between';
@@ -30,6 +31,8 @@ export const Layout = styled.div<ILayout>`
   min-width: ${({ minWidth }) => minWidth}px;
   padding-left: ${({ xPadding = 0 }) => xPadding}px;
   padding-right: ${({ xPadding = 0 }) => xPadding}px;
+  padding-top: ${({ yPadding = 0 }) => yPadding}px;
+  padding-bottom: ${({ yPadding = 0 }) => yPadding}px;
   ${({ margin }) => marginToCss({ margin })};
   background-color: ${({ bgColor }) => bgColor};
   gap: ${({ gap }) => gap}px;
