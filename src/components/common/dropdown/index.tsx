@@ -3,6 +3,7 @@ import {
   _dropdownWrapper,
   _selectSection,
   _selectWrapper,
+  _Title,
 } from './style';
 import DownArrow from '../../../assets/icon/down-arrow';
 import { Colors } from '../../../styles/theme/color';
@@ -28,10 +29,11 @@ function Line() {
 function Dropdown({ ...props }: PropsTypes) {
   const [toggleArrow, setToggleArrow] = useState(false);
   const [currentStatus, setCurrentStatus] = useState<string | undefined>(
-    props.title
+    props.name
   );
   return (
     <_dropdownSection {...props}>
+      {props.title ? <_Title {...props}>{props.title}</_Title> : null}
       <_dropdownWrapper {...props}>
         <p>{currentStatus ?? 'select'}</p>
         <button onClick={() => setToggleArrow((current) => !current)}>

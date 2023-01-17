@@ -1,11 +1,18 @@
 import styled from '@emotion/styled';
 import { Colors } from '../../../styles/theme/color';
 import { PropsTypes } from './@types';
+import { Weight } from '../../../styles/theme/weight';
 
 export const _dropdownSection = styled.div<PropsTypes>`
   display: flex;
   flex-direction: column;
   width: ${({ width = 240 }) => width}px;
+`;
+export const _Title = styled.span<PropsTypes>`
+  font-weight: ${Weight.medium};
+  font-size: 14px;
+  padding-left: 7px;
+  margin-bottom: 7px;
 `;
 export const _dropdownWrapper = styled.div<PropsTypes>`
   display: flex;
@@ -21,8 +28,9 @@ export const _selectSection = styled.div<PropsTypes>`
   position: absolute;
   overflow-y: scroll;
   max-height: 138px;
-  margin-top: ${({ height = 46 }) => height}px;
+  margin-top: ${({ height = 70 }) => height}px;
   border-radius: 2px;
+  z-index: 2;
 
   div {
     height: ${({ height = 46 }) => height}px;

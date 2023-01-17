@@ -2,6 +2,7 @@ import { colorKeyOfType } from '../../../styles/theme/color';
 
 export interface PropsTypes {
   title?: string;
+  name?: string;
   width?: number;
   height?: number;
   bgColor?: colorKeyOfType;
