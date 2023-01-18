@@ -58,6 +58,7 @@ export default function Page() {
             <Dropdown
               name={'학년'}
               width={450}
+              placeholder={'학년을 입력해주세요.'}
               // TODO : refactor
               selectModels={[
                 { name: '1학년' },
@@ -68,6 +69,7 @@ export default function Page() {
             <Dropdown
               name={'반'}
               width={450}
+              placeholder={'반을 입력해주세요.'}
               // TODO : refactor
               selectModels={[
                 { name: '1반' },
@@ -76,8 +78,17 @@ export default function Page() {
                 { name: '4반' },
               ]}
             />
-            <Input name={'번호'} width={450} />
-            <Input name={'비밀번호'} width={450} hasHiddenIcon={true} />
+            <Input
+              name={'번호'}
+              width={450}
+              placeHolder={'번호를 입력해주세요.'}
+            />
+            <Input
+              name={'비밀번호'}
+              width={450}
+              hasHiddenIcon={true}
+              placeHolder={'비밀번호를 입력해주세요.'}
+            />
           </Layout>
           <Button btnKinds={ButtonKinds.CONTAINED} width={450}>
             다음
