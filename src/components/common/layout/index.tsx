@@ -2,6 +2,7 @@ import { marginCssType, marginToCss } from '../../../utils/margin';
 import { colorKeyOfType } from '../../../styles/theme/color';
 import styled from '@emotion/styled';
 
+// TODO : 공통된 속성은 margin 처럼 따로 분리해야 한다.
 interface ILayout extends marginCssType {
   minHeight?: string;
   minWidth?: string;
@@ -19,6 +20,9 @@ interface ILayout extends marginCssType {
   right?: string;
   width?: string;
   height?: string;
+  border?: string;
+  borderRadius?: string;
+  borderColor?: colorKeyOfType;
 }
 
 export const Layout = styled.div<ILayout>`
@@ -42,4 +46,7 @@ export const Layout = styled.div<ILayout>`
   right: ${({ right }) => right};
   width: ${({ width }) => width};
   height: ${({ height }) => height};
+  border: ${({ border }) => border};
+  border-radius: ${({ borderRadius }) => borderRadius};
+  border-color: ${({ borderColor }) => borderColor};
 `;
