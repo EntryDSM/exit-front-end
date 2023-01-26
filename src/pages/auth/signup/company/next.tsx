@@ -36,9 +36,9 @@ export default function Page() {
         >
           <Layout
             direction={'column'}
-            gap={8}
+            gap={'8px'}
             justify={'center'}
-            minHeight={24}
+            minHeight={'24px'}
           >
             <Text weight={600} fontSize={30}>
               회원가입
@@ -48,7 +48,7 @@ export default function Page() {
               <Text>Back</Text>
             </Layout>
           </Layout>
-          <Layout direction={'column'} gap={30} margin={[80, 0, 178, 0]}>
+          <Layout direction={'column'} gap={'30px'} margin={[80, 0, 178, 0]}>
             <Input
               name={'비밀번호'}
               placeHolder={
@@ -69,7 +69,7 @@ export default function Page() {
                 width={450}
                 placeHolder={'전화번호를 입력해주세요.'}
               />
-              <Layout position={'absolute'} bottom={0} right={0}>
+              <Layout position={'absolute'} bottom={'0'} right={'0'}>
                 <Button btnKinds={ButtonKinds.CONTAINED}>발송하기</Button>
               </Layout>
             </Layout>
@@ -79,7 +79,7 @@ export default function Page() {
                 width={450}
                 placeHolder={'인증번호를 입력해주세요.'}
               />
-              <Layout position={'absolute'} bottom={0} right={0}>
+              <Layout position={'absolute'} bottom={'0'} right={'0'}>
                 <Button btnKinds={ButtonKinds.CONTAINED}>발송하기</Button>
               </Layout>
             </Layout>
