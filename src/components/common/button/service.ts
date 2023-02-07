@@ -7,10 +7,12 @@ import {
 } from './@type';
 import {
   containedConfig,
+  noConfig,
   outlinedConfig,
   roundedConfig,
   textConfig,
   underlineConfig,
+  yesConfig,
 } from './model';
 import { Colors } from '../../../styles/theme/color';
 
@@ -29,6 +31,10 @@ export const getButtonPropsByButtonKinds = (
       return containedConfig;
     case ButtonKinds.OUTLINED:
       return outlinedConfig;
+    case ButtonKinds.YES:
+      return yesConfig;
+    case ButtonKinds.NO:
+      return noConfig;
   }
 };
 // TODO Refactor : 후에 처리하는 스타일의 공통된 집합에 따라 통합하여 리팩하기

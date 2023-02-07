@@ -8,6 +8,8 @@ export enum ButtonKinds {
   UNDERLINE = 'UNDERLINE',
   ROUNDED = 'ROUNDED',
   TEXT = 'TEXT',
+  YES = 'YES',
+  NO = 'NO',
 }
 
 export enum ButtonStatus {

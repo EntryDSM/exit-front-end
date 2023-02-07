@@ -115,6 +115,9 @@ export const underlineConfig: IButtonStatus<ButtonStatus> = {
     bgColor: 'gray50',
     fontColor: 'gray800',
     isUnderline: true,
+    border: {
+      radius: 2,
+    },
   },
 };
 
@@ -136,5 +139,56 @@ export const textConfig: IButtonStatus<ButtonStatus> = {
     fontColor: 'gray800',
     bgColor: 'gray50',
     fillColor: 'gray800',
+    border: {
+      radius: 2,
+    },
+  },
+};
+export const yesConfig: IButtonStatus<ButtonStatus> = {
+  [ButtonStatus.ENABLED]: {
+    bgColor: 'check',
+  },
+  [ButtonStatus.HOVER]: {
+    fontColor: 'check',
+    bgColor: 'check50',
+  },
+  [ButtonStatus.PRESSED]: {
+    bgColor: 'gray300',
+  },
+  [ButtonStatus.DISABLED]: {
+    fontColor: 'gray100',
+    bgColor: 'gray200',
+  },
+  [ButtonStatus.WITH_ICON]: {},
+  [ButtonStatus.ICON_ONLY]: {},
+  default: {
+    fontColor: 'gray50',
+    border: {
+      radius: 2,
+    },
+  },
+};
+export const noConfig: IButtonStatus<ButtonStatus> = {
+  [ButtonStatus.ENABLED]: {
+    bgColor: 'error',
+  },
+  [ButtonStatus.HOVER]: {
+    fontColor: 'error',
+    bgColor: 'error50',
+  },
+  [ButtonStatus.PRESSED]: {
+    bgColor: 'gray300',
+  },
+  [ButtonStatus.DISABLED]: {
+    fontColor: 'gray100',
+    bgColor: 'gray200',
+  },
+  [ButtonStatus.WITH_ICON]: {},
+  [ButtonStatus.ICON_ONLY]: {},
+  default: {
+    fontColor: 'gray50',
+    border: {
+      radius: 2,
+    },
   },
 };
