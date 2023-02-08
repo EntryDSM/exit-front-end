@@ -17,11 +17,12 @@ export interface PropsType extends marginCssType {
   className?: string;
   name: string;
   color?: colorKeyOfType;
-  width?: number;
-  height?: number;
+  width?: string;
+  height?: string;
   placeHolder?: string;
   hasHiddenIcon?: boolean;
   initInputType?: 'text' | 'password' | 'email';
   as?: 'input' | 'textarea';
   error?: string;
+  border?: string;
 }

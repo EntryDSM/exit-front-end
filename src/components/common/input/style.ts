@@ -21,10 +21,11 @@ export const _InputComponent = styled.div<PropsType>`
   height: ${({ height = 46 }) => height}px;
 `;
 export const _Input = styled.input<PropsType>`
-  width: ${({ width = 400 }) => width}px;
-  height: ${({ height = 46 }) => height}px;
+  width: ${({ width = 400 }) => width};
+  height: ${({ height = 46 }) => height};
   padding-left: 20px;
   border: 2px solid ${({ error }) => (error ? Colors.error : 'black')};
+  border: ${({ border }) => border};
   border-radius: 4px;
   resize: none;
 
