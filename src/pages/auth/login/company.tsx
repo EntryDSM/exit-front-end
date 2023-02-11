@@ -70,9 +70,12 @@ export default function Page() {
           </Layout>
           <Layout direction={'row'} align={'center'} margin={[0, 0, 216, 0]}>
             <Text>비밀번호를 잊어버리셨나요?</Text>
-            {/*TODO : fontColor 추가하기*/}
-            <Button btnKinds={ButtonKinds.UNDERLINE}>비밀번호 찾기</Button>
-            <RightArrow fillColor={Colors.check} width={24} height={24} />
+            <Layout direction={'row'} align={'center'} margin={[0, 0, 0, 20]}>
+              <Text weight={500} fontSize={17} color={'check'}>
+                비밀번호 찾기
+              </Text>
+              <RightArrow fillColor={Colors.check} width={24} height={24} />
+            </Layout>
           </Layout>
           <Layout direction={'row'} align={'center'} margin={[0, 0, 22, 0]}>
             <Checkbox />
@@ -81,13 +84,16 @@ export default function Page() {
           <Button btnKinds={ButtonKinds.CONTAINED} width={450}>
             다음
           </Button>
-          <Layout direction={'row'} align={'center'}>
+          <Layout direction={'row'} align={'center'} margin={[21, 0, 0, 0]}>
             <Text fontSize={17}>계정이 없으신가요?</Text>
-            {/*TODO : fontColor 추가하기*/}
             <Link href={'/auth/signup/company'}>
-              <Button btnKinds={ButtonKinds.UNDERLINE}>회원가입</Button>
+              <Layout direction={'row'} align={'center'} margin={[0, 0, 0, 21]}>
+                <Text weight={500} fontSize={17} color={'check'}>
+                  회원가입
+                </Text>
+                <RightArrow fillColor={Colors.check} width={24} height={24} />
+              </Layout>
             </Link>
-            <RightArrow fillColor={Colors.check} width={24} height={24} />
           </Layout>
         </Layout>
       </Layout>

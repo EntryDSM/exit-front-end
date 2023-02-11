@@ -37,9 +37,9 @@ export default function Page() {
         >
           <Layout
             direction={'column'}
-            gap={8}
+            gap={'8px'}
             justify={'center'}
-            minHeight={24}
+            minHeight={'24px'}
           >
             <Text weight={600} fontSize={30}>
               회원가입
@@ -49,7 +49,7 @@ export default function Page() {
               <Text>Back</Text>
             </Layout>
           </Layout>
-          <Layout direction={'column'} gap={30} margin={[80, 0, 74, 0]}>
+          <Layout direction={'column'} gap={'30px'} margin={[80, 0, 74, 0]}>
             <Input
               name={'이름'}
               placeHolder={'이름을 입력해주세요.'}
