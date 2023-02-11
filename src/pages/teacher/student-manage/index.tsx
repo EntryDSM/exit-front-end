@@ -5,11 +5,10 @@ import Search from '@assets/icon/search';
 import { Colors } from '@styles/theme/color';
 import Image from 'next/image';
 import TmpImage from '@assets/imgs/AuthBgImg.png';
-import { Button } from '@components/common/button';
-import { ButtonKinds } from '@components/common/button/@type';
 import LeftArrow from '@assets/icon/left-arrow';
 import RightArrow from '@assets/icon/right-arrow';
 import { NextPage } from 'next';
+import Dropdown from '@components/common/dropdown';
 
 const Page: NextPage = ({ ...props }) => {
   return (
@@ -27,10 +26,10 @@ const Page: NextPage = ({ ...props }) => {
       >
         <Layout direction={'column'} gap={'10px'}>
           <Text weight={600} fontSize={'1.5rem'}>
-            기업 요청 리스트
+            학생 관리
           </Text>
           <Text weight={100} fontSize={'1.25rem'}>
-            승인 대기 중
+            학생을 관리해보세요.
           </Text>
         </Layout>
         <Layout direction={'row'} align={'center'} position={'relative'}>
@@ -45,13 +44,43 @@ const Page: NextPage = ({ ...props }) => {
           </Layout>
         </Layout>
       </Layout>
+      <Layout direction={'row'} margin={['0', '0', '2.62vh', '0']} gap={'20px'}>
+        <Dropdown
+          selectModels={[
+            { name: '1학년' },
+            { name: '2학년' },
+            { name: '3학년' },
+          ]}
+          placeholder={'학년'}
+          width={'10.834vw'}
+        />
+        <Dropdown
+          selectModels={[
+            { name: '1반' },
+            { name: '2반' },
+            { name: '3반' },
+            { name: '4반' },
+          ]}
+          placeholder={'반'}
+          width={'10.834vw'}
+        />
+        <Dropdown
+          selectModels={[
+            { name: '공개' },
+            { name: '제출' },
+            { name: '미제출' },
+          ]}
+          placeholder={'문서상태'}
+          width={'10.834vw'}
+        />
+      </Layout>
       <Layout
         direction={'column'}
         gap={'20px'}
         height={'55.5vh'}
         overflow={'scroll'}
       >
-        {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
+        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((i) => (
           <Layout
             key={i}
             height={'6.8vh'}
@@ -62,12 +91,7 @@ const Page: NextPage = ({ ...props }) => {
             borderRadius={'6px'}
           >
             <Layout direction={'row'} align={'center'}>
-              <Layout
-                bgColor={'gray300'}
-                width={'10px'}
-                height={'6.8vh'}
-                borderRadius={'6px 0 0 6px'}
-              />
+              <Layout height={'6.8vh'} width={'0'} />
               <Image
                 src={TmpImage}
                 alt={'none'}
@@ -78,30 +102,23 @@ const Page: NextPage = ({ ...props }) => {
                   marginLeft: '2.08vw',
                 }}
               />
-              <Text weight={500} fontSize={'1rem'} margin={[0, 0, 0, 20]}>
+              <Text weight={500} fontSize={'1rem'} margin={[0, 87, 0, 20]}>
                 기업 이름
               </Text>
+              <Text weight={400}>{1300 + i}</Text>
             </Layout>
             <Layout direction={'row'} align={'center'}>
-              <Text weight={400} color={'gray300'} fontSize={'1rem'}>
-                010-0000-0000
+              <Text weight={400} margin={[0, 193, 0, 0]}>
+                공개
               </Text>
-              <Button
-                btnKinds={ButtonKinds.YES}
-                height={'4.52vh'}
-                width={'4.16vw'}
-                margin={[0, 20, 0, 43]}
+              <Text
+                weight={400}
+                color={i % 2 == 0 ? 'focus' : 'gray300'}
+                fontSize={'1rem'}
+                margin={[0, 139, 0, 0]}
               >
-                승인
-              </Button>
-              <Button
-                btnKinds={ButtonKinds.NO}
-                height={'4.52vh'}
-                width={'4.16vw'}
-                margin={[0, 40, 0, 0]}
-              >
-                거절
-              </Button>
+                피드백 {i}
+              </Text>
             </Layout>
           </Layout>
         ))}
