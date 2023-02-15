@@ -1,7 +1,5 @@
 import { Layout } from '@components/common/layout';
 import { Text } from '@components/common/text';
-import { Input } from '@components/common/input';
-import Search from '@assets/icon/search';
 import { Colors } from '@styles/theme/color';
 import Image from 'next/image';
 import TmpImage from '@assets/imgs/AuthBgImg.png';
@@ -31,17 +29,6 @@ const Page: NextPage = ({ ...props }) => {
           <Text weight={100} fontSize={'1.25rem'}>
             학생을 관리해보세요.
           </Text>
-        </Layout>
-        <Layout direction={'row'} align={'center'} position={'relative'}>
-          <Input
-            name={''}
-            width={'33vw'}
-            placeHolder={'검색할 회사 이름을 입력해주세요.'}
-            border={'2px solid white'}
-          />
-          <Layout position={'absolute'} right={'20px'} top={'20px'}>
-            <Search width={18} height={18} fillColor={Colors.gray300} />
-          </Layout>
         </Layout>
       </Layout>
       <Layout direction={'row'} margin={['0', '0', '2.62vh', '0']} gap={'20px'}>
