@@ -15,13 +15,15 @@ export enum InputAction {
 
 export interface PropsType extends marginCssType {
   className?: string;
+  kindOfInput?: 'default' | 'gray';
   name: string;
   color?: colorKeyOfType;
-  width?: number;
-  height?: number;
+  width?: number | string;
+  height?: number | string;
   placeHolder?: string;
   hasHiddenIcon?: boolean;
   initInputType?: 'text' | 'password' | 'email';
-  as?: 'input' | 'textarea';
+  inputAs?: 'input' | 'textarea';
   error?: string;
+  maxLength?: number;
 }

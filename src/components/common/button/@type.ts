@@ -5,6 +5,7 @@ import { IconResponse } from '../../../assets/icon/@type';
 export enum ButtonKinds {
   CONTAINED = 'CONTAINED',
   OUTLINED = 'OUTLINED',
+  OUTLINED_WHITE = 'OUTLINED_WHITE',
   UNDERLINE = 'UNDERLINE',
   ROUNDED = 'ROUNDED',
   TEXT = 'TEXT',

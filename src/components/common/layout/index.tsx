@@ -1,5 +1,5 @@
 import { marginCssType, marginToCss } from '../../../utils/margin';
-import { colorKeyOfType } from '../../../styles/theme/color';
+import { colorKeyOfType, Colors } from '../../../styles/theme/color';
 import styled from '@emotion/styled';
 
 // TODO : 공통된 속성은 margin 처럼 따로 분리해야 한다.
@@ -9,6 +9,7 @@ interface ILayout extends marginCssType {
   xPadding?: string;
   yPadding?: string;
   bgColor?: colorKeyOfType;
+  background?: string;
   justify?: 'center' | 'flex-start' | 'flex-end' | 'space-between';
   align?: 'center' | 'flex-start' | 'flex-end' | 'space-between';
   direction?: 'column' | 'row';
@@ -23,6 +24,9 @@ interface ILayout extends marginCssType {
   border?: string;
   borderRadius?: string;
   borderColor?: colorKeyOfType;
+  overflow?: string;
+  alignSelf?: 'center' | 'flex-start' | 'flex-end' | 'space-between';
+  zIndex?: number;
 }
 
 export const Layout = styled.div<ILayout>`
@@ -38,7 +42,8 @@ export const Layout = styled.div<ILayout>`
   padding-top: ${({ yPadding = 0 }) => yPadding};
   padding-bottom: ${({ yPadding = 0 }) => yPadding};
   ${({ margin }) => marginToCss({ margin })};
-  background-color: ${({ bgColor }) => bgColor};
+  background-color: ${({ bgColor }) => Colors[bgColor!]};
+  background: ${({ background }) => background};
   gap: ${({ gap }) => gap};
   top: ${({ top }) => top};
   bottom: ${({ bottom }) => bottom};
@@ -49,4 +54,7 @@ export const Layout = styled.div<ILayout>`
   border: ${({ border }) => border};
   border-radius: ${({ borderRadius }) => borderRadius};
   border-color: ${({ borderColor }) => borderColor};
+  overflow: ${({ overflow }) => overflow};
+  align-self: ${({ alignSelf }) => alignSelf};
+  z-index: ${({ zIndex }) => zIndex};
 `;

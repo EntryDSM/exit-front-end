@@ -9,6 +9,7 @@ import {
   containedConfig,
   noConfig,
   outlinedConfig,
+  outlinedWhiteConfig,
   roundedConfig,
   textConfig,
   underlineConfig,
@@ -31,6 +32,8 @@ export const getButtonPropsByButtonKinds = (
       return containedConfig;
     case ButtonKinds.OUTLINED:
       return outlinedConfig;
+    case ButtonKinds.OUTLINED_WHITE:
+      return outlinedWhiteConfig;
     case ButtonKinds.YES:
       return yesConfig;
     case ButtonKinds.NO:
