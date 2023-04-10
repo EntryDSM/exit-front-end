@@ -17,7 +17,7 @@ interface PropsType extends marginCssType {
   onClick?: any;
   cursor?: 'pointer';
   align?: TAlign;
-  fontSize?: number;
+  fontSize?: number | string;
   weight?: number;
 }
 
@@ -32,6 +32,7 @@ const _Text = styled.div<PropsType>`
   ${({ margin }) => marginToCss({ margin })};
   cursor: ${({ cursor }) => cursor};
   text-align: ${({ align }) => align};
-  font-size: ${({ fontSize }) => fontSize}px;
+  font-size: ${({ fontSize }) =>
+    typeof fontSize === 'string' ? fontSize : fontSize + 'px'};
   font-weight: ${({ weight }) => weight};
 `;

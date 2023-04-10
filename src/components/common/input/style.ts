@@ -27,6 +27,7 @@ export const _Input = styled.input<PropsType>`
     typeof height == 'number' ? height + 'px' : height};
   padding-left: 20px;
   border: 2px solid ${({ error }) => (error ? Colors.error : 'black')};
+  border: ${({ border }) => border};
   border-radius: 4px;
   resize: none;
 

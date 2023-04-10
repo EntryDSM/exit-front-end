@@ -1,6 +1,7 @@
 import { colorKeyOfType } from '../../../styles/theme/color';
 import { Dispatch, ReactNode, SetStateAction } from 'react';
 import { IconResponse } from '../../../assets/icon/@type';
+import { marginCssType } from '@utils/margin';
 
 export enum ButtonKinds {
   CONTAINED = 'CONTAINED',
@@ -22,11 +23,13 @@ export enum ButtonStatus {
   ICON_ONLY = 'ICON_ONLY',
 }
 
-export interface PropsType {
+export interface PropsType extends marginCssType {
   className?: string;
   btnKinds: ButtonKinds;
-  width?: number;
-  height?: number;
+  width?: number | string;
+  minWidth?: string;
+  height?: number | string;
+  minHeight?: string;
   icon?: (props: IconResponse) => JSX.Element;
   initStatus?: ButtonStatus;
   children?: ReactNode;

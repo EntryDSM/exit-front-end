@@ -7,6 +7,7 @@ import { ReactQueryDevtools } from 'react-query/devtools';
 
 const query = new QueryClient();
 export default function App({ Component, pageProps }: AppProps) {
+  const { pathname } = useRouter();
   return (
     <StyleProvider>
       <Provider store={store}>
