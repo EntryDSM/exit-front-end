@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import { store } from '@stores/index';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
+import { useRouter } from 'next/router';
 
 const query = new QueryClient();
 export default function App({ Component, pageProps }: AppProps) {
