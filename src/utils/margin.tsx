@@ -7,7 +7,8 @@ type directionType = 'top' | 'left' | 'bottom' | 'right';
 type marginType =
   | [number, number, number, number]
   | [number | directionType, number | 'auto']
-  | [number];
+  | [number]
+  | [string, string, string, string];
 
 export interface marginCssType {
   margin?: marginType[] | marginType;
@@ -31,7 +32,9 @@ const mgReturn = (mg: marginType) => {
       return `margin-right: ${unitTransform(mg[1])};`;
     default:
       let css = 'margin: ';
-      for (let j = 0; j < mg.length; j++) css += mg[j] + 'px ';
+      if (typeof mg[0] === 'number')
+        for (let j = 0; j < mg.length; j++) css += mg[j] + 'px ';
+      else for (let j = 0; j < mg.length; j++) css += mg[j] + ' ';
       return css + ';';
   }
 };

@@ -44,9 +44,9 @@ function Dropdown({ ...props }: PropsTypes) {
         </Text>
         <button onClick={() => setToggleArrow((current) => !current)}>
           {toggleArrow ? (
-            <DownArrow width={24} height={24} fillColor={Colors.gray800} />
-          ) : (
             <UpArrow width={24} height={24} fillColor={Colors.gray800} />
+          ) : (
+            <DownArrow width={24} height={24} fillColor={Colors.gray800} />
           )}
         </button>
       </_dropdownWrapper>

@@ -71,7 +71,24 @@ export const outlinedConfig: IButtonStatus<ButtonStatus> = {
     fillColor: 'gray800',
   },
 };
-
+export const outlinedWhiteConfig: IButtonStatus<ButtonStatus> = {
+  [ButtonStatus.ENABLED]: {},
+  [ButtonStatus.HOVER]: {},
+  [ButtonStatus.PRESSED]: {},
+  [ButtonStatus.DISABLED]: {},
+  [ButtonStatus.WITH_ICON]: {},
+  [ButtonStatus.ICON_ONLY]: {},
+  default: {
+    bgColor: 'gray900',
+    fontColor: 'gray50',
+    border: {
+      border: 2,
+      radius: 2,
+      borderColor: 'gray50',
+    },
+    fillColor: 'gray50',
+  },
+};
 export const roundedConfig: IButtonStatus<ButtonStatus> = {
   [ButtonStatus.ENABLED]: {
     bgColor: 'gray800',
