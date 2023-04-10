@@ -7,7 +7,6 @@ import { Colors } from '@styles/theme/color';
 import Image from 'next/image';
 import AuthBgImg from '@assets/imgs/AuthBgImg.png';
 import { Input } from '@components/common/input';
-import Dropdown from '@components/common/dropdown';
 import Logo from '@assets/icon/logo';
 
 export default function Page() {
@@ -49,46 +48,41 @@ export default function Page() {
               <Text>Back</Text>
             </Layout>
           </Layout>
-          <Layout direction={'column'} gap={'30px'} margin={[80, 0, 74, 0]}>
-            <Input
-              name={'이름'}
-              placeHolder={'이름을 입력해주세요.'}
-              width={450}
-            />
-            <Dropdown
-              name={'학년'}
-              width={450}
-              placeholder={'학년을 입력해주세요.'}
-              // TODO : refactor
-              selectModels={[
-                { name: '1학년' },
-                { name: '2학년' },
-                { name: '3학년' },
-              ]}
-            />
-            <Dropdown
-              name={'반'}
-              width={450}
-              placeholder={'반을 입력해주세요.'}
-              // TODO : refactor
-              selectModels={[
-                { name: '1반' },
-                { name: '2반' },
-                { name: '3반' },
-                { name: '4반' },
-              ]}
-            />
-            <Input
-              name={'번호'}
-              width={450}
-              placeHolder={'번호를 입력해주세요.'}
-            />
+          <Layout direction={'column'} gap={'30px'} margin={[80, 0, 178, 0]}>
             <Input
               name={'비밀번호'}
-              width={450}
+              placeHolder={
+                '영어∙숫자∙특수기호를 포함하여 비밀번호를 입력해주세요'
+              }
               hasHiddenIcon={true}
-              placeHolder={'비밀번호를 입력해주세요.'}
+              width={450}
             />
+            <Input
+              name={'비밀번호 확인'}
+              width={450}
+              placeHolder={'비밀번호를 다시 한번 입력해주세요'}
+              hasHiddenIcon={true}
+            />
+            <Layout position={'relative'}>
+              <Input
+                name={'전화번호'}
+                width={450}
+                placeHolder={'전화번호를 입력해주세요.'}
+              />
+              <Layout position={'absolute'} bottom={'0'} right={'0'}>
+                <Button btnKinds={ButtonKinds.CONTAINED}>발송하기</Button>
+              </Layout>
+            </Layout>
+            <Layout position={'relative'}>
+              <Input
+                name={'인증번호'}
+                width={450}
+                placeHolder={'인증번호를 입력해주세요.'}
+              />
+              <Layout position={'absolute'} bottom={'0'} right={'0'}>
+                <Button btnKinds={ButtonKinds.CONTAINED}>발송하기</Button>
+              </Layout>
+            </Layout>
           </Layout>
           <Button btnKinds={ButtonKinds.CONTAINED} width={450}>
             다음

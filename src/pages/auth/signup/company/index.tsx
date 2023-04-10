@@ -7,7 +7,6 @@ import { Colors } from '@styles/theme/color';
 import Image from 'next/image';
 import AuthBgImg from '@assets/imgs/AuthBgImg.png';
 import { Input } from '@components/common/input';
-import Dropdown from '@components/common/dropdown';
 import Logo from '@assets/icon/logo';
 
 export default function Page() {
@@ -49,34 +48,11 @@ export default function Page() {
               <Text>Back</Text>
             </Layout>
           </Layout>
-          <Layout direction={'column'} gap={'30px'} margin={[80, 0, 74, 0]}>
+          <Layout direction={'column'} gap={'30px'} margin={[80, 0, 178, 0]}>
             <Input
-              name={'이름'}
-              placeHolder={'이름을 입력해주세요.'}
+              name={'성함'}
+              placeHolder={'성함을 입력해주세요.'}
               width={450}
-            />
-            <Dropdown
-              name={'학년'}
-              width={450}
-              placeholder={'학년을 입력해주세요.'}
-              // TODO : refactor
-              selectModels={[
-                { name: '1학년' },
-                { name: '2학년' },
-                { name: '3학년' },
-              ]}
-            />
-            <Dropdown
-              name={'반'}
-              width={450}
-              placeholder={'반을 입력해주세요.'}
-              // TODO : refactor
-              selectModels={[
-                { name: '1반' },
-                { name: '2반' },
-                { name: '3반' },
-                { name: '4반' },
-              ]}
             />
             <Input
               name={'번호'}
@@ -84,10 +60,15 @@ export default function Page() {
               placeHolder={'번호를 입력해주세요.'}
             />
             <Input
-              name={'비밀번호'}
+              name={'담당자 성함'}
               width={450}
-              hasHiddenIcon={true}
-              placeHolder={'비밀번호를 입력해주세요.'}
+              placeHolder={'담장자 성함을 입력해주세요.'}
+            />
+            <Input
+              name={'이메일'}
+              width={450}
+              placeHolder={'이메일을 입력해주세요.'}
+              initInputType={'email'}
             />
           </Layout>
           <Button btnKinds={ButtonKinds.CONTAINED} width={450}>
